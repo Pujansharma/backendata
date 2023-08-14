@@ -1,0 +1,83 @@
+API Endpoints
+User Registration
+Route: POST /api/auth/register
+
+This endpoint allows users to register. The password will be hashed before storing it.
+
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "password": "your_password"
+}
+User Login
+Route: POST /api/auth/login
+
+This endpoint allows users to log in and returns a JWT token on successful login.
+
+{
+  "email": "john@example.com",
+  "password": "your_password"
+}
+Get All Flights
+Route: GET /api/flights
+
+This endpoint returns a list of all available flights.
+
+Get Flight by ID
+Route: GET /api/flights/:id
+
+This endpoint returns the details of a specific flight identified by its ID.
+
+Add New Flight
+Route: POST /api/flights
+
+This endpoint allows users to add new flights to the system.
+
+{
+  "airline": "Airline Name",
+  "flightNo": "ABC123",
+  "departure": "City A",
+  "arrival": "City B",
+  "departureTime": "2023-08-15T10:00:00Z",
+  "arrivalTime": "2023-08-15T12:00:00Z",
+  "seats": 150,
+  "price": 200
+}
+Update Flight by ID
+Route: PATCH /api/flights/:id
+
+This endpoint allows users to update the details of a specific flight identified by its ID.
+
+{
+  "price": 250
+}
+Delete Flight by ID
+Route: DELETE /api/flights/:id
+
+This endpoint allows users to delete a specific flight identified by its ID.
+
+Book Flight
+Route: POST /api/bookings
+
+This endpoint allows users to book flights.
+
+{
+  "flightId": "flight_id_here"
+}
+Get User Bookings
+Route: GET /api/bookings/dashboard
+
+This endpoint lists all the bookings made by the user along with user and flight details.
+
+Update Booking by ID
+Route: PATCH /api/bookings/:id
+
+This endpoint allows users to edit/update a booking identified by its ID.
+
+{
+  "flightId": "new_flight_id_here"
+}
+Delete Booking by ID
+Route: DELETE /api/bookings/:id
+
+This endpoint allows users to delete a booking identified by its ID.
